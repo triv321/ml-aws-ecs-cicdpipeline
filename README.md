@@ -24,7 +24,7 @@ The infrastructure provisioned by this project is live. You can interact with th
 \# Replace YOUR\_ALB\_DNS\_NAME with the actual output from Terraform  
 curl \-X POST \-H "Content-Type: application/json" \\  
      \-d '{"text": "this movie was a complete masterpiece"}' \\  
-     http://YOUR\_ALB\_DNS\_\[NAME.us-east-1.elb.amazonaws.com/predict\](https://NAME.us-east-1.elb.amazonaws.com/predict)
+     http://YOUR\_ALB\_DNS\_\[NAME.us-east-1.elb.amazonaws.com/predict\]
 
 **Expected Response:**
 
