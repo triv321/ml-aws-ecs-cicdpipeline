@@ -23,6 +23,8 @@ The infrastructure provisioned by this project is live. You can interact with th
 
 \# Replace YOUR\_ALB\_DNS\_NAME with the actual output from Terraform  
 curl -X POST -H "Content-Type: application/json"      -d '{"text": "I loved this movie"}'      http://YOUE_ALB_DNS_NAME.com/predict
+
+
 **Expected Response:**
 
 {  
