@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "ml-pipeline-bucket" 
+    bucket         = "triv-bucket-ml" 
     key            = "prod/capstone/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-state-locks" 
+    dynamodb_table = "terraform-state-locks"
   }
 }

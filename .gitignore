@@ -1,2 +1,10 @@
-pyc
-.venv
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
