@@ -6,7 +6,7 @@ on:
     branches:
       - main
 
-# Environment variables available to all jobs
+# env available to all jobs
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
@@ -65,4 +65,5 @@ jobs:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: ${{ env.ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
+
         wait-for-service-stability: true
