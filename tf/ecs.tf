@@ -28,7 +28,7 @@ resource "aws_lb_target_group" "main" {
   target_type = "ip" # required for fargate
 
   health_check {
-    path = "/" # A simple health check on the root path
+    path = "/" # simple health check on the root path
   }
 }
 
@@ -65,7 +65,7 @@ resource "aws_ecs_task_definition" "main" {
   container_definitions = jsonencode([
     {
       name      = "${var.project_name}-container",
-      image     = "${aws_ecr_repository.main.repository_url}:latest", # We'll push to this in the CI/CD phase
+      image     = "${aws_ecr_repository.main.repository_url}:latest", # push to this in the CI/CD phase
       essential = true,
       portMappings = [
         {
@@ -86,7 +86,7 @@ resource "aws_ecs_service" "main" {
 
   network_configuration {
     subnets         = aws_subnet.private[*].id
-    security_groups = [aws_security_group.ecs_service.id] # We'll create this SG next
+    security_groups = [aws_security_group.ecs_service.id] # create this SG next
     assign_public_ip = false # Run in private subnets
   }
 
@@ -97,4 +97,5 @@ resource "aws_ecs_service" "main" {
   }
 
   depends_on = [aws_lb_listener.http]
+
 }
